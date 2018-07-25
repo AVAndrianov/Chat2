@@ -13,9 +13,10 @@
         <module>client</module>
     </modules>
     <properties>
+        <version.webapprunner>8.0.30.2</version.webapprunner>
         <mavin.compiler.source>1.8</mavin.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -36,7 +37,12 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.7.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.jsimone</groupId>
+            <artifactId>webapp-runner</artifactId>
+            <version>${version.webapprunner}</version>
+            <scope>provided</scope>
+        </dependency>
 
 
     </dependencies>
