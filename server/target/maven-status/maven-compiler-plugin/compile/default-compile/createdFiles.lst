@@ -1,0 +1,5 @@
+com/avandrianov/chat/server/Server.class
+com/avandrianov/chat/server/DatabaseAuthService.class
+com/avandrianov/chat/server/MainClass.class
+com/avandrianov/chat/server/AuthService.class
+com/avandrianov/chat/server/Channel.class
