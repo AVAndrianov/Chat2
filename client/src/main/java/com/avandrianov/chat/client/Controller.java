@@ -14,10 +14,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-//import java.awt.*;
+import java.awt.*;
 import java.io.*;
 import java.net.*;
 import java.nio.file.Paths;
@@ -244,7 +245,7 @@ public class Controller implements Initializable {
         Platform.runLater(() -> {
             try {
                 i = 0;
-//                Robot r = new Robot();
+                Robot r = new Robot();
                 if (event.getText().length() == 1 && event.getCode() != KeyCode.TAB) {
                     System.out.println(event.getText());
                     word += event.getText();
@@ -269,10 +270,10 @@ public class Controller implements Initializable {
                         coincidence = false;
                     System.out.println(" out FOR " + word);
                 }
-//                if (typeEvent && event.getText().length() == 1 && event.getCode() != KeyCode.TAB) {
-//                    out.writeUTF("/type");
-//                    typeEvent = false;
-//                }
+                if (typeEvent && event.getText().length() == 1 && event.getCode() != KeyCode.TAB) {
+                    out.writeUTF("/type");
+                    typeEvent = false;
+                }
                 if (event.getCode() == KeyCode.BACK_SPACE) {
                     if (word.length() > 0 && !coincidence) {
                         word = word.substring(0, word.length() - 1);
@@ -289,7 +290,7 @@ public class Controller implements Initializable {
                 if (event.getCode() == KeyCode.UP) {
                     if (textField.getText().equals("")) {
                         textField.appendText(lastMsg);
-//                        r.keyPress(VK_DOWN);
+                        r.keyPress(VK_DOWN);
                     }
                 }
             } catch (Exception e) {

@@ -6,6 +6,9 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ListView?>
 
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.cell.TextFieldListCell?>
+<?import javafx.scene.control.cell.TextFieldTreeTableCell?>
 <HBox fx:id="mainVBox" fx:controller="com.avandrianov.chat.client.Controller"
       xmlns:fx="http://javafx.com/fxml" alignment="CENTER" minWidth="400" minHeight="300">
     <VBox HBox.hgrow="ALWAYS">
