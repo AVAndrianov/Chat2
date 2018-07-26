@@ -36,7 +36,6 @@ public class Channel extends Socket {
         authorization();
         try {
             while (liveClient) {
-                System.out.println("hello");
                 this.str = in.readUTF();
                 String[] token = str.split("\\s");
                 if (token[0].equals("/serverclose")) {
@@ -99,7 +98,7 @@ public class Channel extends Socket {
                     }
                 } else {
                     this.nameClient = getNameClientFromBd();
-                    server.msgBroadcast(this.nameClient + ": " + str);
+                    server.msgBroadcast(this.nameClient + ": " + str + "\n");
                     String d = new Date().toString();
                     server.bdas.addLog(str, d, this.nameClient, "ALL");
                 }
@@ -110,19 +109,16 @@ public class Channel extends Socket {
             try {
                 in.close();
             } catch (Exception e) {
-                System.out.println("inClose");
                 e.printStackTrace();
             }
             try {
                 out.close();
             } catch (Exception e) {
-                System.out.println("outClose");
                 e.printStackTrace();
             }
             try {
                 socket.close();
             } catch (Exception e) {
-                System.out.println("socketClose");
                 e.printStackTrace();
             }
             server.unSubscribe(this);
